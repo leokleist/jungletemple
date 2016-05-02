@@ -1,0 +1,19 @@
+$def with (room)
+
+<h1> $room.name </h1>
+<div class = "descrip">
+<pre id = "descrip">
+$room.description
+</pre>
+</div>
+<a href = "/help">Help</a>
+
+$if room.name == "Death" or room.name == "The End" or room.name == "You win!":
+	<p><a href = "/">Play Again?</a></p>
+
+$else:
+	<p>
+	<form action = "/game" method = "POST">
+		<input type = "text" name = "action"> <input type = "SUBMIT">
+	</form>
+	</p>
